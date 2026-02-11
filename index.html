@@ -3,26 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Byte Kotla | Official Website</title>
+    <title>Global Byte Kotla | Professional Food Delivery & Tech</title>
     <style>
-        :root { --primary: #2563eb; --dark: #1e293b; --text: #334155; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; padding: 0; background: #f8fafc; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
+        :root { --primary: #2563eb; --dark: #0f172a; --accent: #3b82f6; --text: #334155; --bg: #f1f5f9; }
+        body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.7; color: var(--text); margin: 0; padding: 0; background: var(--bg); scroll-behavior: smooth; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
         
-        header { background: white; padding: 40px 0; text-align: center; border-bottom: 3px solid var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { margin: 0; color: var(--dark); font-size: 2.5rem; }
-        .tagline { color: var(--primary); font-weight: bold; margin-top: 5px; }
+        header { background: white; padding: 60px 0; text-align: center; border-bottom: 4px solid var(--primary); }
+        h1 { margin: 0; color: var(--dark); font-size: 2.8rem; letter-spacing: -1px; }
+        .tagline { color: var(--primary); font-weight: 600; font-size: 1.1rem; margin-top: 10px; text-transform: uppercase; }
 
-        nav { background: var(--dark); padding: 10px; text-align: center; position: sticky; top: 0; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        nav { background: var(--dark); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        nav a { color: #cbd5e1; text-decoration: none; margin: 0 15px; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: white; }
 
-        section { background: white; padding: 30px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        h2 { color: var(--dark); border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
+        .hero-status { background: #dbeafe; border: 1px solid #bfdbfe; padding: 20px; border-radius: 12px; margin-top: 30px; text-align: center; }
+        .badge { background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+
+        section { background: white; padding: 40px; margin-top: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; }
+        h2 { color: var(--dark); font-size: 1.8rem; margin-top: 0; display: flex; align-items: center; }
+        h2::before { content: ""; width: 8px; height: 30px; background: var(--primary); margin-right: 15px; border-radius: 4px; }
         
-        .policy-box { font-size: 0.95rem; color: #475569; }
-        footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.8rem; }
+        h3 { color: var(--dark); margin-top: 25px; font-size: 1.2rem; }
+        .policy-content p, .policy-content li { font-size: 0.95rem; margin-bottom: 12px; }
+        ul { padding-left: 20px; }
         
-        .contact-info { background: #eff6ff; padding: 20px; border-radius: 5px; border: 1px dashed var(--primary); }
+        .contact-card { background: var(--dark); color: white; padding: 30px; border-radius: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .contact-card h2 { color: white; border-left-color: var(--accent); }
+        .contact-item { margin-bottom: 15px; }
+        .contact-item strong { color: var(--accent); display: block; font-size: 0.8rem; text-transform: uppercase; }
+
+        footer { text-align: center; padding: 50px; color: #64748b; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            .contact-card { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
@@ -30,89 +46,127 @@
 <header>
     <div class="container">
         <h1>GLOBAL BYTE KOTLA</h1>
-        <p class="tagline">Innovative Food & Technology Solutions</p>
+        <p class="tagline">Premium Food Delivery & Digital Solutions</p>
     </div>
 </header>
 
 <nav>
-    <a href="#about">About</a>
+    <a href="#about">About Us</a>
     <a href="#terms">Terms</a>
     <a href="#privacy">Privacy</a>
-    <a href="#refund">Refund</a>
+    <a href="#refund">Refund Policy</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
 
+    <div class="hero-status">
+        <span class="badge">DEVELOPMENT STATUS</span>
+        <h3>App Launching Soon!</h3>
+        <p>Our official Android application <strong>Global Byte Kotla</strong> is in the final stage of development. Once published on the Google Play Store, customers will be able to order fresh meals with a single tap. Stay tuned!</p>
+    </div>
+
     <section id="about">
-        <h2>About Us</h2>
-        <p>Welcome to <strong>Global Byte Kotla</strong>. We are a tech-driven food services startup based in Himachal Pradesh. Our mission is to provide high-quality food services integrated with seamless digital experiences. We are currently developing our official Android application to make ordering easier for our customers.</p>
+        <h2>About Global Byte Kotla</h2>
+        <p>Global Byte Kotla is a forward-thinking food-tech startup based in the heart of Himachal Pradesh. We bridge the gap between traditional taste and modern technology. Our platform ensures that you get high-quality, hygienically prepared food delivered to your doorstep using our advanced logistics tracking system.</p>
     </section>
 
     <section id="terms">
         <h2>Terms & Conditions</h2>
-        <div class="policy-box">
-            <p>Welcome to Global Byte Kotla. By using our services/app, you agree to:</p>
+        <div class="policy-content">
+            <p>Welcome to Global Byte Kotla. These terms govern your use of our website and upcoming mobile application.</p>
+            
+            <h3>1. Use of Service</h3>
             <ul>
-                <li>All orders are subject to availability and acceptance by us.</li>
-                <li>Users must provide accurate information while placing an order.</li>
-                <li>We reserve the right to refuse service to anyone for any reason at any time.</li>
-                <li>The content on this site/app is for general information only.</li>
+                <li>To place an order, you must be at least 18 years old or under parental supervision.</li>
+                <li>You agree to provide accurate, current, and complete information during the checkout process.</li>
+                <li>Unauthorized use of this website or app may give rise to a claim for damages.</li>
             </ul>
+
+            <h3>2. Pricing & Payments</h3>
+            <ul>
+                <li>All prices listed are in Indian Rupees (INR). Prices are subject to change without notice.</li>
+                <li>Delivery charges and taxes will be applicable as per the final invoice at checkout.</li>
+                <li>Payments must be made through our authorized payment gateway partners.</li>
+            </ul>
+
+            <h3>3. Intellectual Property</h3>
+            <p>The "Global Byte Kotla" name, logo, and the software (App) are the exclusive property of our firm. No part of this service may be reproduced without prior written consent.</p>
         </div>
     </section>
 
     <section id="privacy">
         <h2>Privacy Policy</h2>
-        <div class="policy-box">
-            <p>Your privacy is important to us. Global Byte Kotla policy states:</p>
+        <div class="policy-content">
+            <p>We respect your privacy and are committed to protecting your personal data.</p>
+            
+            <h3>Data Collection</h3>
+            <p>We collect information like your Name, Phone Number, Email, and Delivery Address to process your orders. We also collect device information to optimize our Android App's performance.</p>
+
+            <h3>Data Usage</h3>
             <ul>
-                <li>We only collect personal information (Name, Phone, Address) necessary for order delivery.</li>
-                <li>We do not share your data with third parties except for payment processing.</li>
-                <li>All payment transactions are encrypted via secure payment gateways.</li>
-                <li>We use cookies to improve your experience on our platform.</li>
+                <li>To process and deliver your food orders.</li>
+                <li>To send you transactional SMS and App notifications regarding order status.</li>
+                <li>To improve our menu and services based on your feedback.</li>
+            </ul>
+
+            <h3>Security</h3>
+            <p>We use Industry-Standard SSL encryption to ensure that your payment data and personal details are safe from unauthorized access.</p>
+        </div>
+    </section>
+
+    <section id="refund">
+        <h2>Refund & Cancellation</h2>
+        <div class="policy-content">
+            <p>Food items are perishable, and therefore our policy is strict but fair:</p>
+            
+            <h3>Cancellation Logic</h3>
+            <ul>
+                <li><strong>Pre-Acceptance:</strong> You can cancel your order only if it has NOT been accepted by our Admin/Kitchen.</li>
+                <li><strong>Post-Acceptance:</strong> Once the Admin accepts the order, it enters the preparation stage and cannot be cancelled through the app.</li>
+                <li><strong>Manual Intervention:</strong> If an order was placed by mistake and accepted, you must immediately contact our Support Team via email or visit our outlet. If preparation has started, cancellation will be denied.</li>
+            </ul>
+
+            <h3>Refund Rules</h3>
+            <ul>
+                <li>Refunds are only issued for non-delivery of items or delivery of incorrect products.</li>
+                <li>If an order is marked "Delivered" in our system, it is considered a completed transaction.</li>
+                <li>Approved refunds will be credited back to your original payment method within 5-7 business days.</li>
             </ul>
         </div>
     </section>
 
-  <section id="refund">
-    <h2>Refund & Cancellation Policy</h2>
-    <div class="policy-box">
-        <p>At <strong>Global Byte Kotla</strong>, we strive to provide fresh meals. Our policy is designed to balance customer convenience with the perishable nature of our products:</p>
-        
-        <ul>
-            <li><strong>Cancellation Before Acceptance:</strong> Aap apna order tabhi tak cancel kar sakte hain jab tak humare Admin ne use "Accept" nahi kiya hai. Ek baar order accept ho gaya, toh use system se cancel nahi kiya ja sakega.</li>
-            
-            <li><strong>Post-Acceptance Clause:</strong> Agar order galti se place ho gaya hai aur accept bhi ho chuka hai, toh cancellation ka sirf ek hi rasta hai—aapko turant humare <strong>Support Mail</strong> par contact karna hoga ya shop par message karna hoga.</li>
-            
-            <li><strong>Order Processing:</strong> Ek baar order processing/preparation stage mein chala gaya, toh dashboard par status "Delivered" ya "Processed" hi dikhega. Is stage ke baad cancellation possible nahi hai kyunki food prepare ho chuka hota hai.</li>
-            
-            <li><strong>Refunds:</strong> Refund sirf tabhi process kiya jayega agar:
-                <ul>
-                    <li>Order accept hone se pehle cancel ho gaya ho.</li>
-                    <li>Humari taraf se koi technical issue ho ya item unavailable ho.</li>
-                </ul>
-            </li>
-            
-            <li><strong>Refund Timeline:</strong> Approved refunds original payment method mein 5-7 working days mein credit kar diye jayenge.</li>
-        </ul>
-    </div>
-</section>
-
     <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <p><strong>Merchant Name:</strong> Global Byte Kotla</p>
-            <p><strong>Address:</strong> [Aapka Poora Address Yahan Likhein, Kotla, Himachal Pradesh]</p>
-            <p><strong>Phone:</strong> +91 [Aapka Mobile Number]</p>
-            <p><strong>Email:</strong> [Aapka Email Address]</p>
+        <div class="contact-card">
+            <div>
+                <h2>Contact Merchant</h2>
+                <p>Have questions? Reach out to us directly.</p>
+            </div>
+            <div>
+                <div class="contact-item">
+                    <strong>Merchant Name</strong>
+                    Global Byte Kotla
+                </div>
+                <div class="contact-item">
+                    <strong>Support Email</strong>
+                    [Aapka-Email-Yahan]
+                </div>
+                <div class="contact-item">
+                    <strong>Phone Number</strong>
+                    +91 [Aapka-Number]
+                </div>
+                <div class="contact-item">
+                    <strong>Business Address</strong>
+                    [Full Address as per Bank], Kotla, Himachal Pradesh
+                </div>
+            </div>
         </div>
     </section>
 
 </div>
 
 <footer>
-    &copy; 2026 Global Byte Kotla. All Rights Reserved.
+    &copy; 2026 Global Byte Kotla. Designed for the Future of Food Tech.
 </footer>
 
 </body>

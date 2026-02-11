@@ -4,21 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Byte Kotla | Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #2563eb; --dark: #1e293b; --text: #334155; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; padding: 0; background: #f8fafc; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }                        
-        header { background: white; padding: 40px 0; text-align: center; border-bottom: 3px solid var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { margin: 0; color: var(--dark); font-size: 2.5rem; }
-        .tagline { color: var(--primary); font-weight: bold; margin-top: 5px; }
-        nav { background: var(--dark); padding: 10px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        section { background: white; padding: 30px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        h2 { color: var(--dark); border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
-        .policy-box { font-size: 0.95rem; color: #475569; }
-        .app-status { background: #e0f2fe; padding: 15px; border-radius: 5px; border: 1px solid #bae6fd; margin-bottom: 20px; }
-        footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.8rem; }
-        .contact-info { background: #eff6ff; padding: 20px; border-radius: 5px; border: 1px dashed var(--primary); }
+        :root { 
+            --primary: #2563eb; 
+            --primary-dark: #1e40af;
+            --dark: #0f172a; 
+            --text: #334155; 
+            --bg: #f8fafc;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.7; 
+            color: var(--text); 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg);
+            scroll-behavior: smooth;
+        }
+
+        .container { max-width: 1000px; margin: auto; padding: 0 20px; }
+
+        /* Modern Header with Gradient */
+        header { 
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header h1 { 
+            margin: 0; 
+            font-size: 3rem; 
+            letter-spacing: -1px;
+            font-weight: 700;
+        }
+
+        header .tagline { 
+            color: #60a5fa; 
+            font-weight: 500; 
+            margin-top: 10px; 
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Sticky Navigation */
+        nav { 
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        nav a { 
+            color: var(--dark); 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 14px; 
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover { color: var(--primary); }
+
+        /* App Status Badge */
+        .app-status { 
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 25px; 
+            border-radius: 16px; 
+            margin: 40px 0; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Section Styling */
+        section { 
+            background: white; 
+            padding: 40px; 
+            margin-top: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border: 1px solid #f1f5f9;
+        }
+
+        h2 { 
+            color: var(--dark); 
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        ul { padding-left: 20px; }
+        ul li { margin-bottom: 12px; }
+
+        /* Contact Info Box */
+        .contact-info { 
+            background: #f1f5f9; 
+            padding: 30px; 
+            border-radius: 16px; 
+            border-left: 5px solid var(--primary);
+        }
+
+        .contact-info p { margin: 10px 0; font-weight: 500; }
+        .contact-info strong { color: var(--dark); margin-right: 10px; }
+
+        footer { 
+            text-align: center; 
+            padding: 60px 0; 
+            color: #94a3b8; 
+            font-size: 0.9rem; 
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            section { padding: 25px; }
+            nav a { margin: 0 5px; font-size: 12px; }
+        }
     </style>
 </head>
 <body>
@@ -26,7 +163,7 @@
 <header>
     <div class="container">
         <h1>GLOBAL BYTE KOTLA</h1>
-        <p class="tagline">Innovative Food & Technology Solutions</p>
+        <div class="tagline">The Future of Smart Food Logistics</div>
     </div>
 </header>
 
@@ -34,74 +171,74 @@
     <a href="#about">About</a>
     <a href="#terms">Terms</a>
     <a href="#privacy">Privacy</a>
-    <a href="#refund">Refund</a>
+    <a href="#refund">Refunds</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
     
     <div class="app-status">
-        <strong>App Status:</strong> Our Android application is in the final stage of development. Once published on Google Play Store, you can download <strong>Global Byte Kotla</strong> for a seamless ordering experience. We are currently integrating <strong>PayU Payment Gateway</strong> for secure and encrypted transactions.
+        <span class="badge">DEVELOPMENT PHASE</span>
+        <h3>Our Android Application is Coming Soon</h3>
+        <p>We are in the final stages of launching the <strong>Global Byte Kotla</strong> app on Google Play. 
+        Integrated with <strong>PayU</strong> for military-grade payment security.</p>
     </div>
 
     <section id="about">
-        <h2>About Us</h2>
-        <p>Welcome to <strong>Global Byte Kotla</strong>. We are a tech-driven food services startup based in Himachal Pradesh. Our mission is to provide high-quality food services integrated with seamless digital experiences. We operate as a professional cloud-kitchen, ensuring maximum hygiene and tech-driven delivery within our 2km service radius.</p>
+        <h2>About the Startup</h2>
+        <p>Global Byte Kotla is a tech-driven food services startup based in Himachal Pradesh. We are redefining local food delivery by integrating seamless digital experiences with high-quality culinary standards. Our hyper-local model focuses on efficiency and hygiene within a 2km radius.</p>
     </section>
 
     <section id="terms">
         <h2>Terms & Conditions</h2>
         <div class="policy-box">
-            <p>By using our services, you agree to the following terms:</p>
             <ul>
-                <li><strong>Service Area:</strong> We operate in a specific local radius in Kotla. Orders outside our delivery zone will be automatically cancelled.</li>
-                <li><strong>Order Accuracy:</strong> Users must provide correct contact and delivery details manually. We do not use GPS tracking to ensure maximum user privacy.</li>
-                <li><strong>Pricing:</strong> All prices are listed in INR and include applicable taxes. Delivery fees may apply based on distance.</li>
-                <li><strong>Acceptance:</strong> We reserve the right to accept or reject orders based on real-time kitchen availability.</li>
+                <li><strong>Local Operations:</strong> Service is exclusive to the Kotla region. Orders outside the operational radius are void.</li>
+                <li><strong>Manual Accuracy:</strong> We prioritize user privacy by avoiding GPS tracking; users are responsible for manual address precision.</li>
+                <li><strong>Dynamic Pricing:</strong> Prices include applicable taxes and are subject to real-time updates.</li>
+                <li><strong>Order Rights:</strong> We maintain the right to manage order volume based on kitchen capacity.</li>
             </ul>
         </div>
     </section>
 
     <section id="privacy">
-        <h2>Privacy Policy</h2>
+        <h2>Privacy & Security</h2>
         <div class="policy-box">
-            <p>Your privacy is our priority. Our policy ensures:</p>
             <ul>
-                <li><strong>No Location Tracking:</strong> We do NOT request GPS permissions. We rely on manual address input to protect user privacy.</li>
-                <li><strong>Data Collection:</strong> We only collect Name, Phone Number, and Address essential to fulfill and deliver your food orders.</li>
-                <li><strong>Secure Payments:</strong> Your information is never shared with third parties, except for payment processing via <strong>PayU's</strong> secure servers.</li>
-                <li><strong>Data Protection:</strong> All transactions follow RBI guidelines and are processed through 256-bit SSL encrypted channels.</li>
+                <li><strong>Privacy First:</strong> No background location tracking or GPS permissions requested.</li>
+                <li><strong>Minimal Data:</strong> We only process Name, Phone, and Address for logistics.</li>
+                <li><strong>PayU Integration:</strong> All payment data is handled exclusively by PayU's PCI-DSS compliant servers.</li>
+                <li><strong>Regulatory Compliance:</strong> Fully compliant with RBI digital payment guidelines.</li>
             </ul>
         </div>
     </section>
 
     <section id="refund">
-        <h2>Refund & Technical Errors</h2>
+        <h2>Refund & Technical Protocol</h2>
         <div class="policy-box">
-            <p>Food items are perishable. Our policy regarding <strong>PayU</strong> transactions is as follows:</p>
+            <p>Our payment ecosystem via <strong>PayU</strong> ensures your money is always safe:</p>
             <ul>
-                <li><strong>Cancellation:</strong> You can cancel your order until it is "Accepted" by our kitchen. Once accepted, preparation starts and cancellation is no longer possible.</li>
-                <li><strong>Failed Transactions:</strong> If an amount is deducted but the order is not confirmed due to a technical error, <strong>PayU</strong> will automatically initiate a refund.</li>
-                <li><strong>Technical Glitches:</strong> In case of double payments or system errors, refunds will be processed back to the original payment source after verification.</li>
-                <li><strong>Timeline:</strong> Approved refunds are processed immediately but may take <strong>5-7 business days</strong> to reflect in your bank account as per standard banking norms.</li>
+                <li><strong>Cancellation:</strong> Orders can be revoked until kitchen acceptance. Post-acceptance, the order is locked for preparation.</li>
+                <li><strong>Auto-Refunds:</strong> Failed transactions (money deducted but order not placed) are automatically reversed by the PayU gateway.</li>
+                <li><strong>Dispute Resolution:</strong> Double payments are verified and refunded within 5-7 business days.</li>
             </ul>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Us</h2>
+        <h2>Merchant Identification</h2>
         <div class="contact-info">
-            <p><strong>Merchant Name:</strong> Rakesh Kumar</p>
-            <p><strong>FSSAI License No:</strong> [20926009000140]</p>
-            <p><strong>Address:</strong> [VILL KOTLA PO JEORI TEH RAMPUR DISTT SHIMLA HP , Shimla Town, SHimla Himachal Pradesh - 172101</p>
-            <p><strong>Phone:</strong> +91 [6230828694]</p>
-            <p><strong>Email:</strong> [himachali3210@gmail.com]</p>
+            <p><strong>Merchant Name:</strong>Rakesh Kumar</p>
+            <p><strong>FSSAI License:</strong> [20926009000140]</p>
+            <p><strong>Operational Address:</strong> [VILL KOTLA PO JEORI TEH RAMPUR DISTT SHIMLA HP , Shimla Town, SHimla Himachal Pradesh - 172101]</p>
+            <p><strong>Support Phone:</strong> +91 [6230828694]</p>
+            <p><strong>Support Email:</strong> [himachali3210@gmail.com]</p>
         </div>
     </section>
 </div>
 
 <footer>
-    &copy; 2026 Global Byte Kotla. All Rights Reserved.
+    &copy; 2026 Global Byte Kotla. Designed for Innovation. Verified Merchant.
 </footer>
 
 </body>

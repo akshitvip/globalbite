@@ -3,215 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Bite Master Billing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Global Byte Kotla | Official Website</title>
     <style>
-        :root { --p: #eb4d4b; --s: #130f40; --upi: #3498db; --cash: #27ae60; --type: #f39c12; --bg: #f5f6fa; }
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Outfit',sans-serif; }
-        body { background: var(--bg); color: var(--s); padding-bottom: 110px; }
-
-        header { background: var(--s); color: white; padding: 20px; text-align: center; position: sticky; top:0; z-index: 1000; }
-        .nav-tabs { display: flex; overflow-x: auto; background: white; padding: 12px; gap: 10px; position: sticky; top: 75px; z-index: 999; border-bottom: 1px solid #ddd; }
-        .nav-tabs::-webkit-scrollbar { display: none; }
-        .tab { padding: 8px 18px; border-radius: 20px; border: none; background: #f1f2f6; white-space: nowrap; font-weight: 700; font-size: 0.9rem; }
-        .tab.active { background: var(--p); color: white; }
-
-        .container { padding: 15px; max-width: 600px; margin: auto; }
-        .item-card { background: white; padding: 16px; border-radius: 15px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .item-info h3 { font-size: 1rem; color: #2d3436; }
-        .item-info p { color: var(--p); font-weight: 800; font-size: 1.1rem; }
-
-        .controls { display: flex; align-items: center; gap: 12px; background: #f8f9fa; padding: 5px 12px; border-radius: 25px; }
-        .btn-qty { width: 32px; height: 32px; border-radius: 50%; border: none; color: white; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-        .m { background: #dcdde1; color: #2f3640; } .p { background: var(--p); }
-
-        /* FIXED FOOTER */
-        footer { position: fixed; bottom: 0; width: 100%; padding: 15px; background: white; display: flex; gap: 10px; border-top: 2px solid #ddd; z-index: 1001; }
-        .action-btn { flex: 1; padding: 15px; border-radius: 12px; border: none; font-weight: 800; cursor: pointer; font-size: 1rem; }
-        .gen-bill { background: var(--s); color: white; }
-        .view-hist { background: #636e72; color: white; }
-
-        /* MODALS */
-        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:2000; padding:20px; overflow-y: auto; align-items: flex-start; justify-content: center; }
-        .modal-content { background:white; border-radius:20px; padding:25px; width:100%; max-width:500px; margin-top: 30px; }
+        :root { --primary: #2563eb; --dark: #1e293b; --text: #334155; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; padding: 0; background: #f8fafc; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
         
-        .review-list { background: #fdfdfd; border: 1px solid #eee; border-radius: 10px; padding: 12px; margin-bottom: 15px; max-height: 180px; overflow-y: auto; }
-        .review-item { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px dashed #eee; }
+        header { background: white; padding: 40px 0; text-align: center; border-bottom: 3px solid var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h1 { margin: 0; color: var(--dark); font-size: 2.5rem; }
+        .tagline { color: var(--primary); font-weight: bold; margin-top: 5px; }
 
-        .name-input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 10px; margin-bottom: 15px; font-weight: 600; font-size: 1rem; }
-        .option-group { display: flex; gap: 10px; margin-bottom: 15px; }
-        .opt-btn { flex: 1; padding: 12px; border-radius: 10px; border: 2px solid #ddd; background: white; font-weight: 800; cursor: pointer; font-size: 0.9rem; }
-        .opt-btn.sel-type { border-color: var(--type); background: #fffcf0; color: var(--type); }
-        .opt-btn.sel-pay { border-color: var(--upi); background: #f0f7ff; color: var(--upi); }
+        nav { background: var(--dark); padding: 10px; text-align: center; position: sticky; top: 0; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .tag { padding: 12px; border-radius: 10px; text-align: center; color: white; font-weight: 700; font-size: 0.85rem; }
-        .tag-orange { background: var(--type); } .tag-blue { background: var(--upi); } .tag-green { background: var(--cash); } .tag-dark { background: var(--s); grid-column: span 2; font-size: 1.1rem; }
-
-        .history-card { background: #f9f9f9; padding: 15px; border-radius: 12px; margin-bottom: 10px; border-left: 5px solid var(--p); cursor: pointer; position: relative; }
-        .details-pane { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ccc; font-size: 0.85rem; color: #444; }
+        section { background: white; padding: 30px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        h2 { color: var(--dark); border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
+        
+        .policy-box { font-size: 0.95rem; color: #475569; }
+        footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.8rem; }
+        
+        .contact-info { background: #eff6ff; padding: 20px; border-radius: 5px; border: 1px dashed var(--primary); }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Global Bite Kotla (jeori) </h1>
+    <div class="container">
+        <h1>GLOBAL BYTE KOTLA</h1>
+        <p class="tagline">Innovative Food & Technology Solutions</p>
+    </div>
 </header>
 
-<nav class="nav-tabs" id="tabs"></nav>
-<div class="container" id="menu-view"></div>
+<nav>
+    <a href="#about">About</a>
+    <a href="#terms">Terms</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#refund">Refund</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to <strong>Global Byte Kotla</strong>. We are a tech-driven food services startup based in Himachal Pradesh. Our mission is to provide high-quality food services integrated with seamless digital experiences. We are currently developing our official Android application to make ordering easier for our customers.</p>
+    </section>
+
+    <section id="terms">
+        <h2>Terms & Conditions</h2>
+        <div class="policy-box">
+            <p>Welcome to Global Byte Kotla. By using our services/app, you agree to:</p>
+            <ul>
+                <li>All orders are subject to availability and acceptance by us.</li>
+                <li>Users must provide accurate information while placing an order.</li>
+                <li>We reserve the right to refuse service to anyone for any reason at any time.</li>
+                <li>The content on this site/app is for general information only.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="privacy">
+        <h2>Privacy Policy</h2>
+        <div class="policy-box">
+            <p>Your privacy is important to us. Global Byte Kotla policy states:</p>
+            <ul>
+                <li>We only collect personal information (Name, Phone, Address) necessary for order delivery.</li>
+                <li>We do not share your data with third parties except for payment processing.</li>
+                <li>All payment transactions are encrypted via secure payment gateways.</li>
+                <li>We use cookies to improve your experience on our platform.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="refund">
+        <h2>Refund & Cancellation</h2>
+        <div class="policy-box">
+            <p>Since we deal in perishable food items, our policy is as follows:</p>
+            <ul>
+                <li><strong>Cancellation:</strong> Orders cannot be cancelled once they have entered the preparation stage.</li>
+                <li><strong>Refunds:</strong> Full refunds are only provided if the order is not delivered or if the wrong item is delivered.</li>
+                <li><strong>Process:</strong> Approved refunds will be processed to the original payment method within 5-7 business days.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Merchant Name:</strong> Global Byte Kotla</p>
+            <p><strong>Address:</strong> [Aapka Poora Address Yahan Likhein, Kotla, Himachal Pradesh]</p>
+            <p><strong>Phone:</strong> +91 [Aapka Mobile Number]</p>
+            <p><strong>Email:</strong> [Aapka Email Address]</p>
+        </div>
+    </section>
+
+</div>
 
 <footer>
-    <button class="action-btn gen-bill" onclick="openCheckout()">Confirm Bill</button>
-    <button class="action-btn view-hist" onclick="openHistory()">Reports</button>
+    &copy; 2026 Global Byte Kotla. All Rights Reserved.
 </footer>
 
-<div id="checkoutModal" class="modal">
-    <div class="modal-content">
-        <h2 style="text-align:center; margin-bottom:15px;">Review Order</h2>
-        
-        <div class="review-list" id="review-items"></div>
-
-        <input type="text" id="cust-name" class="name-input" placeholder="Customer Name (Optional)">
-        
-        <p style="font-weight:700; margin-bottom:5px;">Order Type:</p>
-        <div class="option-group">
-            <button class="opt-btn" id="t-din" onclick="setType('Dining')">Dining</button>
-            <button class="opt-btn" id="t-pak" onclick="setType('Packing')">Packing</button>
-        </div>
-
-        <p style="font-weight:700; margin-bottom:5px;">Payment Mode:</p>
-        <div class="option-group">
-            <button class="opt-btn" id="p-cash" onclick="setPay('Cash')">Cash</button>
-            <button class="opt-btn" id="p-upi" onclick="setPay('UPI')">UPI</button>
-        </div>
-
-        <h3 style="text-align:right; margin:15px 0;">Total: ₹<span id="modal-total">0</span></h3>
-        <button onclick="saveBill()" style="width:100%; padding:15px; background:var(--s); color:white; border:none; border-radius:12px; font-weight:800; font-size:1.1rem;">CONFIRM & SAVE</button>
-        <button onclick="closeModals()" style="width:100%; margin-top:10px; background:#eee; border:none; padding:10px; border-radius:10px;">Back to Menu</button>
-    </div>
-</div>
-
-<div id="historyModal" class="modal">
-    <div class="modal-content">
-        <h2 style="text-align:center">Daily Sales Summary</h2>
-        <div class="report-grid">
-            <div class="tag tag-orange">Dining: <span id="r-din">0</span></div>
-            <div class="tag tag-orange">Packing: <span id="r-pak">0</span></div>
-            <div class="tag tag-blue">UPI: ₹<span id="r-upi">0</span></div>
-            <div class="tag tag-green">Cash: ₹<span id="r-cash">0</span></div>
-            <div class="tag tag-dark">Grand Total: ₹<span id="r-grand">0</span></div>
-        </div>
-        <p style="font-size: 0.75rem; color: #888; margin: 15px 0 5px; text-align: center;">(Tap a bill to see pieces)</p>
-        <div id="history-box" style="margin-top:5px; max-height: 250px; overflow-y: auto;"></div>
-        
-        <button onclick="resetDay()" style="width:100%; margin-top:15px; padding:12px; background:var(--p); color:white; border:none; border-radius:10px; font-weight:700;">RESET ALL SALES</button>
-        <button onclick="closeModals()" style="width:100%; margin-top:10px; background:#eee; border:none; padding:10px; border-radius:10px;">Close Reports</button>
-    </div>
-</div>
-
-<script>
-    // FULL DATA FROM PANKU.PDF [cite: 4, 8, 10, 17, 18, 28-68, 71, 72]
-    const menuData = [
-        { cat: "Breakfast", items: [{n: "Stuffed Prantha (1pc)", p: 35}, {n: "Curd", p: 15}, {n: "Amul Butter (8gm)", p: 10}, {n: "Veg Pakora", p: 70}, {n: "Tea", p: 15}] },
-        { cat: "Noodles & Maggi", items: [{n: "Veg Noodle (Full)", p: 85}, {n: "Veg Noodle (Half)", p: 45}, {n: "Chilli Garlic (Full)", p: 95}, {n: "Chilli Garlic (Half)", p: 50}, {n: "Hakka Noodle (Full)", p: 75}, {n: "Hakka Noodle (Half)", p: 40}, {n: "Plain Maggi", p: 35}, {n: "Veg Maggi", p: 45}] },
-        { cat: "Momos", items: [{n: "Steam Momos (Full)", p: 85}, {n: "Steam Momos (Half)", p: 45}, {n: "Fried Momos (Full)", p: 95}, {n: "Fried Momos (Half)", p: 50}, {n: "Kurkure Momos (Full)", p: 110}, {n: "Kurkure Momos (Half)", p: 60}, {n: "Cheezee Momos (6pcs)", p: 150}] },
-        { cat: "Pizza", items: [{n: "Kulhad Pizza", p: 95}, {n: "Paneer Pizza (L)", p: 210}, {n: "Paneer Pizza (S)", p: 170}, {n: "Fresh Farm Pizza (L)", p: 180}, {n: "Fresh Farm Pizza (S)", p: 140}, {n: "Tomato Cheese (L)", p: 160}, {n: "Tomato Cheese (S)", p: 130}, {n: "Onion Cheese (L)", p: 160}, {n: "Onion Cheese (S)", p: 130}, {n: "Double Cheese Marg (L)", p: 160}, {n: "Double Cheese Marg (S)", p: 130}, {n: "Single Cheese Marg (L)", p: 140}, {n: "Single Cheese Marg (S)", p: 110}, {n: "Extra Cheese Burst", p: 45}] },
-        { cat: "Chinese & Pasta", items: [{n: "Paneer Chilly (G/D)", p: 180}, {n: "Mushroom Chilly (G/D)", p: 150}, {n: "Honey Chilly Cauliflower", p: 130}, {n: "Honey Chilly Potato", p: 120}, {n: "Red Sauce Pasta", p: 80}, {n: "White Sauce Pasta", p: 90}, {n: "Mix Sauce Pasta", p: 110}] },
-        { cat: "Soup", items: [{n: "Veg Manchow", p: 35}, {n: "Hot & Sour", p: 40}, {n: "Thupka", p: 45}, {n: "Thupka with Momos", p: 60}, {n: "Sweet Corn", p: 40}] },
-        { cat: "Burger", items: [{n: "Aloo Tikki Burger", p: 35}, {n: "Paneer Burgur", p: 60}] },
-        { cat: "Sandwich", items: [{n: "Veg Classic Sandwich", p: 60}, {n: "Veg Grilled Sandwich", p: 85}] },
-        { cat: "Shakes", items: [{n: "Strawberry Shake", p: 60}, {n: "Mango Shake", p: 60}, {n: "Oreo Shake", p: 75}] },
-        { cat: "Garlic Breads", items: [{n: "Stuffed Garlic Bread", p: 100}, {n: "Cheese Garlic Bread", p: 90}] },
-        { cat: "Rolls", items: [{n: "Spring Roll (2pcs)", p: 80}] }
-    ];
-
-    let cart = {}; let selType = ""; let selPay = "";
-    let history = JSON.parse(localStorage.getItem('gb_master_data')) || [];
-
-    function init() {
-        const tabs = document.getElementById('tabs');
-        menuData.forEach((c, i) => {
-            const b = document.createElement('button');
-            b.className = `tab ${i===0?'active':''}`;
-            b.innerText = c.cat;
-            b.onclick = (e) => render(i, e.target);
-            tabs.appendChild(b);
-        });
-        render(0);
-    }
-
-    function render(idx, btn) {
-        if(btn) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); }
-        const view = document.getElementById('menu-view'); view.innerHTML = '';
-        menuData[idx].items.forEach(item => {
-            const q = cart[item.n]?.q || 0;
-            view.innerHTML += `<div class="item-card"><div class="item-info"><h3>${item.n}</h3><p>₹${item.p}</p></div><div class="controls"><button class="btn-qty m" onclick="updateQty('${item.n}', ${item.p}, -1)">-</button><span id="q-${item.n.replace(/\s+/g,'')}">${q}</span><button class="btn-qty p" onclick="updateQty('${item.n}', ${item.p}, 1)">+</button></div></div>`;
-        });
-    }
-
-    function updateQty(n, p, d) {
-        if(!cart[n]) cart[n] = { p: p, q: 0 };
-        cart[n].q += d; if(cart[n].q <= 0) delete cart[n];
-        const el = document.getElementById(`q-${n.replace(/\s+/g,'')}`); if(el) el.innerText = cart[n]?.q || 0;
-    }
-
-    function openCheckout() {
-        const list = document.getElementById('review-items');
-        let total = 0; list.innerHTML = '';
-        for(let k in cart) {
-            let sub = cart[k].p * cart[k].q; total += sub;
-            list.innerHTML += `<div class="review-item"><span>${k} (x${cart[k].q})</span><span>₹${sub}</span></div>`;
-        }
-        document.getElementById('modal-total').innerText = total;
-        if(total > 0) document.getElementById('checkoutModal').style.display = 'flex';
-        else alert("Cart Khali Hai!");
-    }
-
-    function setType(t) { selType = t; document.getElementById('t-din').className = t==='Dining'?'opt-btn sel-type':'opt-btn'; document.getElementById('t-pak').className = t==='Packing'?'opt-btn sel-type':'opt-btn'; }
-    function setPay(p) { selPay = p; document.getElementById('p-cash').className = p==='Cash'?'opt-btn sel-pay':'opt-btn'; document.getElementById('p-upi').className = p==='UPI'?'opt-btn sel-pay':'opt-btn'; }
-
-    function saveBill() {
-        const total = parseInt(document.getElementById('modal-total').innerText);
-        const name = document.getElementById('cust-name').value.trim() || `Guest Bill #${history.length + 1}`;
-        if(!selType || !selPay) return alert("Dining/Packing aur Payment select karo!");
-
-        history.push({ name, total, type: selType, mode: selPay, items: {...cart}, time: new Date().toLocaleTimeString() });
-        localStorage.setItem('gb_master_data', JSON.stringify(history));
-        
-        alert("Bill Saved!");
-        cart = {}; selType = ""; selPay = ""; document.getElementById('cust-name').value = "";
-        document.querySelectorAll('.opt-btn').forEach(b => b.className = 'opt-btn');
-        closeModals(); render(0);
-    }
-
-    function openHistory() {
-        const box = document.getElementById('history-box');
-        let uT = 0, cT = 0, dC = 0, pC = 0; box.innerHTML = '';
-        
-        history.forEach((h, idx) => {
-            if(h.mode === 'UPI') uT += h.total; else cT += h.total;
-            if(h.type === 'Dining') dC++; else pC++;
-            
-            let itemStr = Object.keys(h.items).map(k => `${k} (x${h.items[k].q})`).join(', ');
-            box.innerHTML += `
-                <div class="history-card" onclick="toggleD(${idx})">
-                    <b>${h.name}</b> | ₹${h.total} <span style="float:right; font-size:0.7rem;">${h.mode}</span>
-                    <div id="d-${idx}" class="details-pane"><b>Items:</b> ${itemStr}<br><small>Time: ${h.time} | ${h.type}</small></div>
-                </div>`;
-        });
-        
-        document.getElementById('r-din').innerText = dC; document.getElementById('r-pak').innerText = pC;
-        document.getElementById('r-upi').innerText = uT; document.getElementById('r-cash').innerText = cT;
-        document.getElementById('r-grand').innerText = uT + cT;
-        document.getElementById('historyModal').style.display = 'flex';
-    }
-
-    function toggleD(i) { let e = document.getElementById(`d-${i}`); e.style.display = e.style.display === 'block' ? 'none' : 'block'; }
-    function resetDay() { if(confirm("Reset Data?")) { history = []; localStorage.removeItem('gb_master_data'); openHistory(); } }
-    function closeModals() { document.querySelectorAll('.modal').forEach(m => m.style.display = 'none'); }
-    
-    init();
-</script>
 </body>
 </html>
